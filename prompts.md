@@ -1,5 +1,11 @@
 
 
+# Fundamentação da ideia
+
+Tendo escolhido o tipo de sistema que eu desejava construir, decidi utilizar a funcionalidade de "Deep Research" do Gemini Pro, por sua capacidade de fazer pesquisas completas extensivas, 
+para saber se sistemas similares existiam. Por isso. defini o seguinte prompt de pesquisa: **Quero que você busque sistemas de presença de aula (Por exemplo: O professor gera um QRCode e o estudante escaneia para receber presença). Quero saber sobre sua adotação e receptividade, e limitações possíveis.**
+O resultado deste prompt está disponível no pdf "pesquisa_de_sistema.pdf" neste mesmo repositório.
+
 # Comando de criação
 Para começar o projeto, queria utilizar uma funcionalidade do IDE Trae, de builder. O objetivo 
 era ter uma fundação mínima do projeto com o mínimo de esforço, para que eu focasse nas principais
