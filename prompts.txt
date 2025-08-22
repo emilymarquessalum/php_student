@@ -18,3 +18,19 @@ Para facilitar a definição, pedi:
 Também vou adicionar nesse código a definição das tabelas e as funcionalidades principais então não faça essa parte, quero apenas o mínimo para poder adiciona-las eu mesma.'
 
 Todos esses prompts geraram o conteúdo encontrado no primeiro commit do projeto ('initial commit')
+
+----
+
+
+Defini as tabelas em database/init.sql e criei um arquivo setup_database.php com o seguinte prompt:
+
+'Quero uma página que execute o seguinte init.sql aqui caso o banco esteja vazio:'
+E então implementei uma página básica de login que faz login para o professor. 
+Porém, queria deixar ela mais visualmente interessante, então pedi:
+'can you make this login screen prettier?'
+Ele gerou um conteúdo em arquivo único de uma tela de login, cujo .css ocupava 
+grande parte do arquivo, então pedi: 
+'how would you best separate the .css from this file so I can reuse it later?'
+O que levou a geração dos arquivos login.css e main.css. 
+
+

@@ -1,18 +1,24 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) session_start();
+require_once '../includes/auth.php';
+require_once '../config.php'; 
+require_once '../includes/db.php';
+require_once '../includes/functions.php'; 
 
-if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'student') {
-    header('Location: ../login.php');
-    exit();
+require_auth('student');
+// Debug: show session and login data before auth check
+if (isset($_GET['debug'])) {
+    echo '<pre style="background:#eee;padding:10px;">SESSION (before require_auth): ' . print_r($_SESSION, true) . "\n";
+    echo '_POST: '; var_dump($_POST);
+    echo '_GET: '; var_dump($_GET);
+    echo '</pre>';
+} 
+// Debug: show session after auth check
+if (isset($_GET['debug'])) { 
+    echo '<pre style="background:#eee;padding:10px;">SESSION (after require_auth): ' . print_r($_SESSION, true) . '</pre>';
 }
-?>
+?> 
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Aluno - Sistema de Presença QR Code</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://unpkg.com/html5-qrcode"></script>
 </head>
