@@ -2,28 +2,35 @@
 
 Uma aplicação web em PHP para gerenciar presença em sala de aula usando QR codes. O sistema possui dois tipos de usuários: professores e alunos.
 
+## Objetivos
+
+- Resolver problemas de segurança que sistemas atuais do mesmo propósito possuem (identificação única de estudante, garantia de presença válida, necessidade do uso de internet);
+- Permitir observar os dados das presenças mais facilmente;
+
+
 ## Funcionalidades
 
 ### Para Professores
-- Sistema de login seguro
-- Painel de controle com lista de turmas
-- Geração de QR code para cada turma
-- QR codes com tempo limitado (válido por 5 minutos)
+- Sistema de login;
+- Painel de controle com lista de turmas;
+- Geração de QR code para cada dia de aula;
+- QR codes com tempo limitado (válido por 5 minutos);
+- Gráficos de dados em relação a presença dos alunos;
 
 ### Para Alunos
-- Sistema de login seguro
-- Painel com leitor de QR code
-- Registro de presença em tempo real
-- Leitura de QR code através da câmera
+- Sistema de login;
+- Painel com leitor de QR code;
+- Registro de presença em tempo real;
+- Leitura de QR code através da câmera;
+- Identificação de dispositivo (para que uma pessoa não possa registrar para mais de um aluno com o mesmo celular);
+- Identificação de localização (para que uma pessoa não possa receber presença se não estiver fisicamente presente);
 
 ## Requisitos Técnicos
 
-- PHP 7.4 ou superior
-- PostgreSQL 12 ou superior
-- Servidor web (Apache/Nginx)
-- Navegador moderno com suporte a acesso à câmera
-- Conexão com internet (para recursos CDN)
-- PDO PHP Extension habilitada
+- PHP 7.4 ou superior;
+- PostgreSQL 12 ou superior;
+- Navegador moderno com suporte a acesso à câmera;
+- Conexão com internet (para recursos CDN);
 
 ## Configuração do Banco de Dados
 
@@ -45,25 +52,21 @@ Uma aplicação web em PHP para gerenciar presença em sala de aula usando QR co
 
 ## Bibliotecas Utilizadas
 
-- Bootstrap 5.1.3 (Framework UI)
 - QRCode.js (Geração de QR Code)
 - HTML5-QRCode (Leitura de QR Code)
 
-## Notas de Segurança
+## Notas de Segurança 
 
-Este é um projeto de demonstração e inclui medidas básicas de segurança. Para uso em produção, você deve:
+Este é um projeto de demonstração e inclui medidas básicas de segurança. Para uso em produção, é preciso fazer diversas melhorias:
 
 1. Implementar armazenamento adequado em banco de dados para:
    - Contas de usuários
    - Informações das turmas
    - Registros de presença
-2. Adicionar autenticação apropriada com hash de senha
-3. Implementar proteção CSRF
-4. Usar gerenciamento seguro de sessão
-5. Adicionar limite de taxa para geração e leitura de QR code
-6. Implementar registro adequado de erros
-7. Nunca armazenar senhas do banco de dados no código
-8. Usar variáveis de ambiente para configurações sensíveis
+2. Implementar proteção CSRF
+3. Usar gerenciamento seguro de sessão
+4. Adicionar limite de taxa para geração e leitura de QR code
+5. Implementar registro adequado de erros
 
 ## Estrutura do Projeto
 
