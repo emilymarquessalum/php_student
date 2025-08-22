@@ -46,8 +46,7 @@ try {
     $total_students = 0;
     $classes_today = 0;
     $load_error = 'Erro ao carregar turmas. Tente novamente mais tarde.';
-    $load_error_details = $e->getMessage();
-    error_log("Dashboard error: " . $e->getMessage());
+    $load_error_details = $e->getMessage(); 
 }
 ?>
 
