@@ -2,21 +2,22 @@
 // filepath: c:\xampp\htdocs\php_student\config.php
 
 // Load environment variables from .env file
-function loadEnv($path) {
+function loadEnv($path)
+{
     if (!file_exists($path)) {
         return;
     }
-    
+
     $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lines as $line) {
         if (strpos(trim($line), '#') === 0) {
             continue;
         }
-        
+
         list($name, $value) = explode('=', $line, 2);
         $name = trim($name);
         $value = trim($value);
-        
+
         if (!array_key_exists($name, $_ENV)) {
             $_ENV[$name] = $value;
         }
@@ -49,7 +50,7 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
-   echo "<h3>Database Connection Failed</h3>";
+    echo "<h3>Database Connection Failed</h3>";
     echo "<strong>DSN:</strong> " . $dsn . "<br>";
     echo "<strong>Host:</strong> " . $host . "<br>";
     echo "<strong>Database:</strong> " . $db . "<br>";
@@ -61,26 +62,3 @@ try {
     echo "<strong>PHP Extensions:</strong> " . implode(', ', get_loaded_extensions()) . "<br>";
     die();
 }
-
-
-// includes/functions.php
-// (functions like sanitize_input, is_logged_in, redirect_if_not_logged_in should only be defined in includes/functions.php)
-
-
-// includes/header.php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard Professor</title>
-    <link rel="stylesheet" href="../assets/style.css"> 
-</head>
-
-<body>
-    <header> 
-    </header>
