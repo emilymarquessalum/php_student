@@ -2,6 +2,14 @@
 # This is a lightweight image suitable for a simple server.
 FROM php:8.2-cli
 
+# Install the necessary system dependencies for the PostgreSQL extension.
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install the PostgreSQL PDO driver for PHP.
+RUN docker-php-ext-install pdo pdo_pgsql
+
 # Set the working directory inside the container.
 # This is where your repository files will be copied.
 WORKDIR /usr/src/app
