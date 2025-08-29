@@ -8,6 +8,7 @@ Uma aplicação web em PHP para gerenciar presença em sala de aula usando QR co
 - Permitir observar os dados das presenças mais facilmente;
 
 ## Melhorias Futuras
+- Telas de registro (tanto de aluno quanto professor);
 - Implementar os outros métodos de gerar a presença;
 - Melhorar a experiência para o aluno (app);
 - Criar tela de 'analises avançadas' sobre os dados de presença;

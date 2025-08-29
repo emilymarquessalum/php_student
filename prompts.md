@@ -302,3 +302,14 @@ HTML
 
 Conclui que esta foi uma ótima sugestão, para deixar o código mais organizado e facilitar modificações. Por isso, a partir deste ponto comecei a seguir esta abordagem.
 
+Depois de ter as telas implementadas, fiz um prompt para gerar uma documentação de API, que coloquei em BACKEND_README.md. Para isso selecionei todas as páginas que continham comandos SQL (dei um CNTRL+F para encontrar mais fácil) e anexei ao prompt (estava utilizando, neste caso específico que requeria muito contexto, o github copilot). Também anexei o init.sql. Pedi:
+'In each of these screens there are SQL commands to apply changes to a database. The database schema information can be found in init.sql. I want to write a documentation for a possible API that could implement all of these functionalities. Please write me this documentation in a BACKEND_README.md file'.
+Por algum motivo, apesar de pedir para ele escrever num arquivo especifíco, ele se recusou a fazer isso. Talvez por estar pedindo para gerar tanto conteúdo para um arquivo vazio, não tenho certeza. Porém, ele gerou o conteúdo no chat, então simplesmente copiei e colei. 
+
+A partir disso, pedi novamente para o github copilot, que criasse um backend em python. Anexei a documentação gerada, e novamente o init.sql para manter consistência, e pedi:
+
+'Create a backend API in python that implements each of the functionalities in this documentation.'
+A princípio ele gerou alguns arquivos, mas ficou claro para mim que ele não tinha gerado tudo. Então, pedi 'continue' um total de 3 vezes.
+Para usos futuros, com essa estratégia, talvez o melhor seria separar a documentação em módulos. 
+
+A geração tinha alguns problemas, fui testando funcionalidades e algumas tinham campos com nome diferente do esperado, outras causavam erros de assincronidade que tive que resolver (pesquisei pelo erro na internet e encontrei a solução). No geral, a criação da estrutura foi útil mas a qualidade não foi a esperada. Pedir por uma geração de muito conteúdo parece ser uma ideia pouco produtiva atualmente.
